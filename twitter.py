@@ -2,6 +2,10 @@ import streamlit as st
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import FAISS
 from conversational import get_conversational_chain
+
+from authtoken import GOOGLE_API_KEY,OPENAI_API_KEY
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 # Function to generate Twitter post
 def generate_twitter_post(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
