@@ -21,7 +21,7 @@ def main():
         unsafe_allow_html=True
     )
 
-    logo = open('C:\\Users\\suddh\\OneDrive\\Documents\\LangChain\\ADverse.Ai\\logo.png','rb').read()
+    logo = open('logo.png','rb').read()
 
     # Display the image and text in the sidebar
     st.sidebar.image(logo, width=100)
