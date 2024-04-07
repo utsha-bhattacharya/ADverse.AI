@@ -1,4 +1,6 @@
 from openai import OpenAI
+from authtoken import OPENAI_API_KEY
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 #Function to generate AI based images 
 def generate_images_using_openai(text, num_images=3, resolution=(256, 256)):
