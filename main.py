@@ -1,5 +1,8 @@
 import streamlit as st
 import os
+from authtoken import GOOGLE_API_KEY,OPENAI_API_KEY
+os.environ["GOOGLE_AOI_KEY"] = GOOGLE_API_KEY
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 #________________________________________________________________________________
 #external functions 
 from docgen import generate_document_content
