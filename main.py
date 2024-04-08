@@ -11,7 +11,7 @@ from image import generate_images_using_openai
 
 
 def main():
-    st.set_page_config(page_title="ADverse.AI" , layout="wide")
+    st.set_page_config(page_title="Market.AI" , layout="wide")
 
     st.markdown(
         """
@@ -30,7 +30,7 @@ def main():
     st.sidebar.image(logo, width=100)
     st.sidebar.markdown("""
         <div style='display: inline-block; vertical-align: top;'>
-            <h1 style='margin-bottom: 0px;'>ADverse.AI</h1>
+            <h1 style='margin-bottom: 0px;'>Market.AI</h1>
             <p style='margin-top: 0px;'>Description</p>
             <p>This tool helps you generate social media posts for LinkedIn, Twitter and generate image based on either documents uploaded by the user or text scraped from websites.</p>
             <hr>
