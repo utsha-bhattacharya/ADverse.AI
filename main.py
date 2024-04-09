@@ -1,7 +1,4 @@
 import streamlit as st
-import os
-from authtoken import GOOGLE_API_KEY
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 #________________________________________________________________________________
 #external functions 
