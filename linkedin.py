@@ -2,10 +2,7 @@ import streamlit as st
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import FAISS
 from conversational import get_conversational_chain
-import os
 
-from authtoken import GOOGLE_API_KEY
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 # Function to generate LinkedIn post
 def generate_linkedin_post(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
