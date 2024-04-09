@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-from authtoken import GOOGLE_API_KEY,OPENAI_API_KEY
+from authtoken import GOOGLE_API_KEY, OPENAI_API_KEY
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 #________________________________________________________________________________
