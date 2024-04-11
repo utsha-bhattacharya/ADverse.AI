@@ -59,7 +59,7 @@ def main():
 
     elif user_choice == "Image Generation":
         st.subheader("Generate AI-Based Images")
-        #st.sidebar.markdown("### Image Generation")
+        st.sidebar.markdown("### Image Generation")
         user_prompt = st.text_input("Enter your prompt or text for generating image:")
         num_images = st.number_input("Number of images to generate", min_value=1, max_value=10, value=3)
         resolution_options = {
