@@ -36,7 +36,7 @@ def main():
         """,
         unsafe_allow_html=True)
 
-    user_choice = st.sidebar.radio("Navigation", ["Document Content Generation", "Website Content Generation", "Image Generation", "Email Generation"])
+    user_choice = st.sidebar.radio("Navigation", ["Document Content Generation", "Website Content Generation", "Image Generation"])
 
     if user_choice == "Document Content Generation":
         st.subheader("Get Social-Media Content for your Document")
@@ -76,7 +76,7 @@ def main():
                 image_urls = generate_images_using_openai(user_prompt, num_images, resolution)
                 for idx, image_url in enumerate(image_urls):
                     st.image(image_url, caption=f"Generated Image {idx+1}", use_column_width=True)
-     elif user_choice == "Email Generation":
+    elif user_choice == "Email Generation":
         user_question = st.text_input("Enter your question or prompt:")
         recipient_name = st.text_input("Recipient Name")
         recipient_email = st.text_input("Recipient Email")
@@ -88,8 +88,6 @@ def main():
 
         if st.button("Generate Custom Email"):
             generate_email(recipient_name=recipient_name, recipient_email=recipient_email, email_content=email_content, tone=tone)
-
-
 
 
 if __name__ == "__main__":
