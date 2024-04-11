@@ -36,7 +36,7 @@ def main():
         """,
         unsafe_allow_html=True)
 
-    user_choice = st.sidebar.radio("Navigation", ["Document Content Generation", "Website Content Generation", "Image Generation"])
+    user_choice = st.sidebar.radio("Navigation", ["Document Content Generation", "Website Content Generation", "Image Generation", "Email Generation"])
 
     if user_choice == "Document Content Generation":
         st.subheader("Get Social-Media Content for your Document")
