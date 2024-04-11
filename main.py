@@ -5,6 +5,7 @@ import streamlit as st
 from docgen import generate_document_content
 from website import generate_website_content
 from image import generate_images_using_openai
+from email import generate_email
 
 
 def main():
@@ -75,6 +76,20 @@ def main():
                 image_urls = generate_images_using_openai(user_prompt, num_images, resolution)
                 for idx, image_url in enumerate(image_urls):
                     st.image(image_url, caption=f"Generated Image {idx+1}", use_column_width=True)
+     elif user_choice == "Email Generation":
+        user_question = st.text_input("Enter your question or prompt:")
+        recipient_name = st.text_input("Recipient Name")
+        recipient_email = st.text_input("Recipient Email")
+        email_content = st.text_area("Email Content")
+        tone = st.selectbox("Tone", ["Formal", "Informal"])
+
+        if st.button("Generate Email"):
+            generate_email(user_question=user_question)
+
+        if st.button("Generate Custom Email"):
+            generate_email(recipient_name=recipient_name, recipient_email=recipient_email, email_content=email_content, tone=tone)
+
+
 
 
 if __name__ == "__main__":
