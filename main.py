@@ -5,7 +5,7 @@ import streamlit as st
 from docgen import generate_document_content
 from website import generate_website_content
 from image import generate_images_using_openai
-from email import generate_automated_email
+from email_gen import generate_automated_email
 
 
 def main():
