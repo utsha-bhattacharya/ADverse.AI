@@ -41,3 +41,15 @@ def get_conversational_chain(model_name):
     prompt = PromptTemplate(template=prompt_template, input_variables=["platform", "context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
     return chain
+
+# Function to load email
+def get_email_chain(model_name):
+    prompt_template = """
+    Generate an email for {recipient_name} ({recipient_email}):\n\n{email_context}
+    Answer:
+    """
+
+    model = ChatGoogleGenerativeAI(model=model_name, temperature=0.3)
+    prompt = PromptTemplate(template=prompt_template, input_variables=["recipient_name", "recipient_email", "email_context"])
+    chain = LLMChain(prompt=prompt, llm = model)
+    return chain
