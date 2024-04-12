@@ -5,6 +5,7 @@ from langchain.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
+from langchain.chains import LLMChain
 
 # Function to extract text from PDF documents
 def get_pdf_text(pdf_docs):
