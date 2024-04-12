@@ -5,6 +5,7 @@ import streamlit as st
 from docgen import generate_document_content
 from website import generate_website_content
 from image import generate_images_using_openai
+from email import generate_automated_email
 
 
 def main():
@@ -35,7 +36,7 @@ def main():
         """,
         unsafe_allow_html=True)
 
-    user_choice = st.sidebar.radio("Navigation", ["Document Content Generation", "Website Content Generation", "Image Generation"])
+    user_choice = st.sidebar.radio("Navigation", ["Document Content Generation", "Website Content Generation", "Image Generation", "E-mail Generation"])
 
     if user_choice == "Document Content Generation":
         st.subheader("Get Social-Media Content for your Document")
@@ -75,6 +76,14 @@ def main():
                 image_urls = generate_images_using_openai(user_prompt, num_images, resolution)
                 for idx, image_url in enumerate(image_urls):
                     st.image(image_url, caption=f"Generated Image {idx+1}", use_column_width=True)
+    elif user_choice == "E-mail Generation":
+        st.subheader("Generate Automated Email")
+        recipient_name = st.text_input("Recipient's Name")
+        recipient_email = st.text_input("Recipient's Email")
+        email_content = st.text_input("Email Content")
+        if st.button("Generate Email"):
+            with st.spinner("Generating Email..."):
+                generate_automated_email(recipient_name, recipient_email, email_content)
   
 
 if __name__ == "__main__":
