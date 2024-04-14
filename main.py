@@ -44,6 +44,8 @@ def main():
         pdf_docs = st.file_uploader("Upload your PDF Files", accept_multiple_files=True)
         user_question = st.text_input("Enter your question or prompt:")
         platform = st.sidebar.selectbox("Select platform", ["LinkedIn", "Twitter","Facebook"])
+        tone = st.selectbox("Select tone", ['Negative','Positive','Formal','Academic','Creative','Simple','Critical Analysis','Standard','Fluent'])
+
         if st.button("Generate Post"):
             with st.spinner("Generating..."):
                 generate_document_content(user_question, platform, pdf_docs)
@@ -54,6 +56,8 @@ def main():
         website_urls = st.text_area("Enter the URLs of websites(one URL per line)", '',height = 50)
         user_question = st.text_input("Enter your question or prompt:")
         platform = st.sidebar.selectbox("Select platform", ["LinkedIn", "Twitter", "Facebook"])
+        tone = st.selectbox("Select tone", ['Negative','Positive','Formal','Academic','Creative','Simple','Critical Analysis','Standard','Fluent'])
+
         if st.button("Generate Content"):
             with st.spinner("Generating..."):
                 generate_website_content(user_question, platform, website_urls.split("\n"))
