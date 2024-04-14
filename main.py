@@ -48,7 +48,7 @@ def main():
 
         if st.button("Generate Post"):
             with st.spinner("Generating..."):
-                generate_document_content(user_question, platform, pdf_docs)
+                generate_document_content(user_question, platform, pdf_docs, tone)
 
     elif user_choice == "Website Content Generation":
         st.subheader("Get Social-Media Content for your Website")
@@ -60,7 +60,7 @@ def main():
 
         if st.button("Generate Content"):
             with st.spinner("Generating..."):
-                generate_website_content(user_question, platform, website_urls.split("\n"))
+                generate_website_content(user_question, platform, website_urls.split("\n"), tone)
 
     elif user_choice == "Image Generation":
         st.subheader("Generate AI-Based Images")
