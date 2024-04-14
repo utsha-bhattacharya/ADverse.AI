@@ -11,11 +11,10 @@ def generate_document_content(user_question, platform, pdf_docs):
         text_chunks = get_text_chunks(raw_text)
         get_vector_store(text_chunks)
         st.success("Data has been successfully stored.")
-
     if user_question:
         if platform == "LinkedIn":
-            generate_linkedin_post(user_question)
+            generate_linkedin_post(user_question, tone)
         elif platform == "Twitter":
-            generate_twitter_post(user_question)
+            generate_twitter_post(user_question, tone)
         elif platform == "Facebook":
-            generate_facebook_post(user_question)
+            generate_facebook_post(user_question, tone)
