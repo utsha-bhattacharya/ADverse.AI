@@ -5,7 +5,7 @@ from linkedin import generate_linkedin_post
 from twitter import  generate_twitter_post
 
 # Function to scrape website and generate content
-def generate_website_content(user_question, platform, website_urls):
+def generate_website_content(user_question, platform, website_urls, tone):
     # Scraping data from websites
     scraped_texts = []
     for url in website_urls:
