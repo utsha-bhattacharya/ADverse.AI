@@ -22,6 +22,8 @@ def generate_website_content(user_question, platform, website_urls):
 
     if user_question:
         if platform == "LinkedIn":
-            generate_linkedin_post(user_question)
+            generate_linkedin_post(user_question, tone)
         elif platform == "Twitter":
-            generate_twitter_post(user_question)
+            generate_twitter_post(user_question, tone)
+        elif platform == "Facebook":
+            generate_facebook_post(user_question, tone)
