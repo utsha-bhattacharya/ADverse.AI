@@ -5,7 +5,7 @@ from twitter import  generate_twitter_post
 from facebook import generate_facebook_post
 
 
-def generate_document_content(user_question, platform, pdf_docs):
+def generate_document_content(user_question, platform, pdf_docs, tone):
     if pdf_docs:
         raw_text = get_pdf_text(pdf_docs)
         text_chunks = get_text_chunks(raw_text)
