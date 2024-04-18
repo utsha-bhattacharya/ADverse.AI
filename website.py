@@ -3,6 +3,7 @@ from scrape import scrape_website
 from conversational import get_vector_store, get_text_chunks
 from linkedin import generate_linkedin_post
 from twitter import  generate_twitter_post
+from facebook_gen import generate_facebook_post
 
 # Function to scrape website and generate content
 def generate_website_content(user_question, platform, website_urls, tone):
