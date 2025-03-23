@@ -13,3 +13,4 @@ ftfy
 openai
 accelerate
 bs4
+libglib2.0-0
